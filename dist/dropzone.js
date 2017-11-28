@@ -1650,11 +1650,16 @@ var Dropzone = function (_Emitter) {
   }, {
     key: "handleFiles",
     value: function handleFiles(files) {
-      var _this5 = this;
+        var _this5 = this;
 
-      return files.map(function (file) {
-        return _this5.addFile(file);
-      });
+        var files_array = [];
+        for(var i=0; i<files.length; i++) {
+          files_array.push(files[i]);
+        }
+
+        return files_array.map(function (file) {
+            return _this5.addFile(file);
+        });
     }
 
     // When a folder is dropped (or files are pasted), items must be handled
